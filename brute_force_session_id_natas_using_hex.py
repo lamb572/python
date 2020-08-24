@@ -30,6 +30,8 @@ while search == True:
         if length > a_len:
                 password = sessionid 
                 a_len = len(r.content)
+                print(password)
+                print(a_len)
                 
     print(password)            
     break
